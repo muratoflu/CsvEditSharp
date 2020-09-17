@@ -28,7 +28,7 @@ namespace CsvEditSharp.Bindings
                 ?? configuration.TypeConverterCache.GetConverter(mapData.Member)
                 ?? new DefaultTypeConverter();
             memberMapData = mapData;
-            HeaderName = headerName;
+            HeaderName = headerName.Replace("_", " ");
         }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
